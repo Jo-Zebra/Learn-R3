@@ -3,7 +3,9 @@ Transgenerational Epigenetics
 
 Added this sentence within GitHub: MAGIC!
 
-This is where I cause even more conflict because I can, I'm a DreckSau. 
+
+Whoopsie, now I'm causing more conflicts: aggression to the max. 
+
 
 TODO: Add more to the title of your project here
 
