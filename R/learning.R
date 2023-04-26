@@ -68,4 +68,59 @@ blood_pressure <- select(nhanes_small, starts_with("bp_"))
 rename(blood_pressure, bp_systolic = bp_sys_ave)
 
 nhanes_small %>%
+  select(starts_with("bp")) %>%
   rename(bp_systolic = bp_sys_ave)
+
+# Filtering. You have to use logical operators, which are listed on the website.
+
+nhanes_small %>%
+  filter(phys_active != "No")
+
+nhanes_small %>%
+  filter(bmi >= 25)
+
+# Combining logical operators
+nhanes_small %>%
+  filter(bmi >= 25 & phys_active == "No")
+
+nhanes_small %>%
+  filter(bmi >= 25 | phys_active == "No")
+
+# Arrange data. You can use the desc() function for descending, and just arrange for ascending.
+nhanes_small %>%
+  arrange(desc(age))
+
+nhanes_small %>%
+  arrange(education, age)
+
+# Transforming data. The mutate() function does this. In this case you transform a column that already exists, here it's age * 12, which changes the column age to months.
+nhanes_small %>%
+  mutate(
+    age = age * 12,
+    logged_bmi = log(bmi)
+  )
+
+nhanes_small %>%
+  mutate(old = if_else(age >= 30, "Yes", "No"))
+
+
+# Exercise 7.12 -----------------------------------------------------------
+
+
+# Doing exercise 7.12
+nhanes_small
+# 1. BMI between 20 and 40 with diabetes
+nhanes_small %>%
+    # Format should follow: variable >= number or character
+    filter(bmi >= 20 & bmi <= 40 & diabetes == "Yes")
+
+# Pipe the data into mutate function and:
+nhanes_modified <- nhanes_small %>% # Specifying dataset
+    mutate(
+        # 2. Calculate mean arterial pressure
+        mean_bp = ((2 * bp_dia_ave) + bp_dia_ave/3),
+        # 3. Create young_child variable using a condition
+        young_child = if_else(age <= 6, "Yes", "No"))
+
+
+nhanes_modified
