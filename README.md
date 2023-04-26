@@ -1,6 +1,8 @@
 Jo 
 Transgenerational Epigenetics
 
+Added this sentence within GitHub: MAGIC!
+
 TODO: Add more to the title of your project here
 
 # Learn R3:
