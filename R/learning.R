@@ -124,3 +124,28 @@ nhanes_modified <- nhanes_small %>% # Specifying dataset
 
 
 nhanes_modified
+
+
+# Back to code-alongs -----------------------------------------------------
+
+# Create summary statistics. Very importantly is to tell the function to ignore the missing values, which is the na.rm = TRUE argument.
+nhanes_small %>%
+    summarise(max_bmi = max(bmi, na.rm = TRUE),
+              min_bmi = min(bmi, na.rm = TRUE))
+
+# the filtering function in the following code takes everything that is NOT (!) NA-values from the diabetes column, before the following functions (the group and statistical arguments, in this case the means)
+
+nhanes_small %>%
+    filter(!is.na(diabetes)) %>%
+    group_by(diabetes) %>%
+    summarize(mean_age = mean(age, na.rm = TRUE),
+              mean_bmi = mean(bmi, na.rm = TRUE)) %>%
+    ungroup()
+
+# The ungroup() function at the end of the code, doesn't do anything for this particular code, but IT'S GOOD PRACTICE!
+# You should always do it.
+
+# Saving data
+readr::write_csv(nhanes_small,
+                 here::here("data/nhanes_small.csv"))
+
