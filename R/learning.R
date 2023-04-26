@@ -20,4 +20,5 @@ library(tidyverse)
 # Just a very important commitment thing: Just because you've committed the file within Git, does NOT mean you've committed it to Github - this still needs to be done later.
 # I'm just saying this, because I was a dumb dumb and wrote in my first commitments that I was adding them to GitHub, and I definitely was not. Just committing them to Git.
 
-# Here's an example of a conflict!
+# I'm continuing to cause a conflict - what a drama Queen!
+
