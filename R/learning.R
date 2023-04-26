@@ -107,7 +107,7 @@ nhanes_small %>%
 # Exercise 7.12 -----------------------------------------------------------
 
 
-# Doing exercise 7.12
+# Doing exercise 7.12 - Just a note. I named it mean_bp instead of mean_arterial_pressure.
 nhanes_small
 # 1. BMI between 20 and 40 with diabetes
 nhanes_small %>%
