@@ -76,3 +76,81 @@ Beautiful Dolphin in @fig-Dolphin-living-its-best-life!
 
 ![Example of why dolphins are the best - I mean just look at him](Images/Dolphin.jpeg){#fig-Dolphin-living-its-best-life width="110%" height="110%"}
 
+
+
+## Visualizing data 
+```{r}
+# Create histogram for BMI
+ggplot(nhanes_small, aes(x = bmi)) +
+  geom_histogram()
+```
+
+
+
+```{r}
+nhanes_small %>%
+  filter(bmi <= 60) %>%
+  ggplot(aes(x = bmi)) +
+  geom_histogram(na.rm = TRUE)
+```
+
+BMI distribution in NHANES Dataset was visualized in @fig-bmi-histo
+
+
+```{r}
+#| fig-cap: "Distribution of BMI"
+#| label: "fig-bmi-histo"
+
+nhanes_small %>%
+  filter(bmi <= 60) %>%
+  ggplot(aes(x = bmi)) +
+  geom_histogram(na.rm = TRUE)
+```
+
+
+```{r}
+# Create count barplot for education
+ggplot(nhanes_small, aes(x = education)) +
+  geom_bar()
+```
+
+```{r}
+# Create count barplot for diabetes status
+ggplot(nhanes_small, aes(x = diabetes)) +
+  geom_bar()
+```
+
+```{r}
+nhanes_small %>%
+  filter(!is.na(diabetes)) %>%
+  ggplot(aes(x = diabetes)) +
+  geom_bar()
+```
+
+```{r}
+nhanes_small %>%
+  filter(!is.na(education)) %>%
+  ggplot(aes(x = education)) +
+  geom_bar()
+```
+
+Learning how to have the plots side by side
+
+```{r}
+#| label: fig-diabetes-education
+#| fig-cap: "Counts of Diabetes and Education in NHANES"
+#| fig-subcap:
+#|  - "Number of those with or without diabetes"
+#|  - "Number of those with educational status"
+#| layout-ncol: 2
+
+nhanes_small %>%
+  filter(!is.na(diabetes)) %>%
+  ggplot(aes(x = diabetes)) +
+  geom_bar()
+
+nhanes_small %>%
+  filter(!is.na(education)) %>%
+  ggplot(aes(x = education)) +
+  geom_bar()
+```
