@@ -66,4 +66,13 @@ nhanes_small %>%
   ) %>%
   knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
 ```
-```
+
+## Dolphins are the best
+
+Don't insert an image in a code chunk!
+Anywho Dolphins are magical beings and they should be protected at all costs. 
+
+Beautiful Dolphin in @fig-Dolphin-living-its-best-life!
+
+![Example of why dolphins are the best - I mean just look at him](Images/Dolphin.jpeg){#fig-Dolphin-living-its-best-life width="110%" height="110%"}
+

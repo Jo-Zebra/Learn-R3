@@ -1,3 +1,4 @@
+# Now I added another random sentence: Hi Me!
 # I'm adding a line of text to push to Github
 
 # Description of R/ folder and .R files
